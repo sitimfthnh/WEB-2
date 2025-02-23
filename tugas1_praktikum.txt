@@ -1,0 +1,40 @@
+1. Jelaskan apa yang dimaksud dengan dokomen root?
+Dokumen root (atau file root) adalah direktori atau folder tertinggi dalam sebuah sistem file komputer. Ini adalah titik awal dari struktur direktori dan berisi semua file dan direktori lainnya.
+
+2. Pada apache web server, apakah dokumen root harus terletak dalam direktori C:\xampp\htdocs?
+Pada Apache Web Server, dokumen root (atau direktori root) tidak harus terletak dalam direktori C:\xampp\htdocs. Namun, pada instalasi XAMPP default, direktori C:\xampp\htdocs memang digunakan sebagai dokumen root.
+Dokumen root Apache dapat diatur melalui file konfigurasi Apache, yaitu httpd.conf atau apache2.conf. Anda dapat mengubah direktori dokumen root dengan mengedit direktif "DocumentRoot" dalam file konfigurasi tersebut.
+
+3. Jelaskan apa yang dimaksud dengan perintah git:init,clone,remote,addcommit,push dan checkout
+- git init: Perintah ini digunakan untuk membuat repository Git baru di direktori yang sudah ada. Ini akan membuat direktori . git ⁠ yang berisi semua metadata dan informasi tentang repository.
+- ⁠git clone: Perintah ini digunakan untuk membuat salinan repository yang sudah ada. Anda dapat menggunakan perintah ini untuk menduplikasi repository dari GitHub, GitLab, atau Bitbucket.
+- ⁠git add: Perintah ini digunakan untuk menambahkan perubahan ke dalam staging area. Anda dapat menggunakan perintah ini untuk menambahkan file baru, mengubah file yang sudah ada, atau menghapus file.
+- git commit: Perintah ini digunakan untuk membuat commit dari perubahan yang sudah ditambahkan ke dalam staging area. Anda dapat menggunakan perintah ini untuk membuat commit dengan pesan yang jelas.
+- git push: Perintah ini digunakan untuk mengirimkan perubahan yang sudah di-commit ke dalam repository jarak jauh.
+- git checkout: Perintah ini digunakan untuk mengganti branch atau versi dari repository. Anda dapat menggunakan perintah ini untuk mengganti branch, mengganti versi, atau membuat branch baru.
+
+4. Jelaskan perbedaan antara GitHub dan GitLab?
+GitHub dan GitLab adalah dua platform populer untuk mengelola dan berbagi kode sumber (source code) menggunakan Git. Berikut adalah beberapa perbedaan antara GitHub dan GitLab:
+Fitur:
+-⁠GitHub: Lebih fokus pada kolaborasi dan komunitas, dengan fitur seperti Pull Request, Issue, dan Project.
+⁠-GitLab: Menawarkan fitur yang lebih lengkap, termasuk Continuous Integration/Continuous Deployment (CI/CD), Container Registry, dan Mattermost (alat komunikasi tim).
+Harga:
+-⁠GitHub: Menawarkan rencana gratis dengan batasan, serta rencana berbayar yang dimulai dari $7 per pengguna per bulan.
+-⁠GitLab: Menawarkan rencana gratis tanpa batasan, serta rencana berbayar yang dimulai dari $19 per pengguna per bulan.
+Keamanan:
+-⁠GitHub: Menawarkan fitur keamanan seperti autentikasi dua faktor, enkripsi, dan kontrol akses.
+-⁠GitLab: Juga menawarkan fitur keamanan serupa, serta fitur tambahan seperti pengujian keamanan otomatis dan integrasi dengan alat keamanan lainnya.
+
+5. Apa bedanya variable user dengan variable system?
+- Variabel User
+Variabel user adalah variabel yang ditetapkan oleh pengguna (user) untuk keperluan pribadi. Variabel ini hanya berlaku untuk pengguna yang bersangkutan dan tidak mempengaruhi pengguna lain.
+- Variabel Sistem
+Variabel sistem adalah variabel yang ditetapkan oleh sistem operasi untuk keperluan sistem. Variabel ini berlaku untuk semua pengguna dan proses yang berjalan di sistem.
+
+6. Apa persamaan variable system dengan variable Constant?
+Persamaan Variabel Sistem dan Variabel Konstanta
+-⁠ ⁠Nilai yang tidak berubah: Variabel sistem dan variabel konstanta memiliki nilai yang tidak berubah-ubah. Nilai variabel sistem ditetapkan oleh sistem operasi, sedangkan nilai variabel konstanta ditetapkan oleh programmer.
+- ⁠Digunakan untuk keperluan global: Variabel sistem dan variabel konstanta digunakan untuk keperluan global, yaitu untuk mengatur perilaku sistem atau program.
+-⁠ ⁠Dapat diakses dari mana saja: Variabel sistem dan variabel konstanta dapat diakses dari mana saja dalam program atau sistem.
+-⁠ ⁠Mempunyai nilai default: Variabel sistem dan variabel konstanta mempunyai nilai default yang ditetapkan oleh sistem operasi atau programmer.
+-⁠ ⁠Tidak dapat diubah oleh pengguna: Variabel sistem dan variabel konstanta tidak dapat diubah oleh pengguna, kecuali oleh administrator sistem atau programmer.
