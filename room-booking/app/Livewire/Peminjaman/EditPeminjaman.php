@@ -2,40 +2,54 @@
 
 namespace App\Livewire\Peminjaman;
 
-use App\Models\Peminjaman;
 use Livewire\Component;
+use Livewire\Attributes\Validate;
+use App\Models\Peminjaman;
 
 class EditPeminjaman extends Component
 {
-    public $peminjaman;
-    public $kode, $nama_peminjam, $ruangan, $tanggal, $status;
+    #[Validate('required|string|max:10')]
+    public string $ruang_id = '';
+
+    #[Validate('required|string|max:10')]
+    public string $pegawai_id = '';
+
+    #[Validate('required|string|max:50')]
+    public $tanggal = '';
+
+    #[Validate('required|string|max:50')]
+    public $jam_mulai = '';
+
+    #[Validate('required|string|max:50')]
+    public $jam_akhir = '';
+
+    #[Validate('required|string|max:50')]
+    public $keterangan = '';
+
+    public Peminjaman $peminjaman;
 
     public function mount(Peminjaman $peminjaman)
     {
         $this->peminjaman = $peminjaman;
-        $this->kode = $peminjaman->kode;
-        $this->nama_peminjam = $peminjaman->nama_peminjam;
-        $this->ruangan = $peminjaman->ruangan;
-        $this->tanggal = $peminjaman->tanggal;
-        $this->status = $peminjaman->status;
-    }
 
+        $this->ruang_id = $peminjaman->ruang_id;
+        $this->pegawai_id = $peminjaman->pegawai_id;
+        $this->tanggal = $peminjaman->tanggal;
+        $this->jam_mulai = $peminjaman->jam_mulai;
+        $this->jam_akhir = $peminjaman->jam_akhir;
+        $this->keterangan = $peminjaman->keterangan;
+    }
     public function save()
     {
-        $this->validate([
-            'kode' => 'required',
-            'nama_peminjam' => 'required',
-            'ruangan' => 'required',
-            'tanggal' => 'required|date',
-            'status' => 'required'
-        ]);
+        $this->validate();
 
         $this->peminjaman->update([
-            'kode' => $this->kode,
-            'nama_peminjam' => $this->nama_peminjam,
-            'ruangan' => $this->ruangan,
+            'ruang_id' => $this->ruang_id,
+            'pegawai_id' => $this->pegawai_id,
             'tanggal' => $this->tanggal,
-            'status' => $this->status
+            'jam_mulai' => $this->jam_mulai,
+            'jam_akhir' => $this->jam_akhir,
+            'keterangan' => $this->keterangan,
         ]);
 
         session()->flash('message', 'Peminjaman berhasil diperbarui.');

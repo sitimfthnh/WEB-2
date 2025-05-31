@@ -7,21 +7,19 @@
         </div>
     @endif
 
-    <div class="mb-4">
-        <flux:button :href="route('peminjaman.create')" variant="primary">
-            New Peminjaman
-        </flux:button>
+    <div class="flex justify-between mb-4">
+        <flux:button :href="route('peminjaman.create')" variant="primary">New Peminjaman</flux:button>
     </div>
-
     <table class="min-w-full border-collapse border border-gray-400 mt-4">
         <thead>
             <tr class="text-left bg-gray-100">
                 <th class="py-2 px-4 border border-gray-300">No.</th>
-                <th class="py-2 px-4 border border-gray-300">Pegawai</th>
                 <th class="py-2 px-4 border border-gray-300">Ruang</th>
+                <th class="py-2 px-4 border border-gray-300">Pegawai</th>
                 <th class="py-2 px-4 border border-gray-300">Tanggal</th>
-                <th class="py-2 px-4 border border-gray-300">Waktu</th>
-                <th class="py-2 px-4 border border-gray-300">Keperluan</th>
+                <th class="py-2 px-4 border border-gray-300">Jam Mulai</th>
+                <th class="py-2 px-4 border border-gray-300">Jam Akhir</th>
+                <th class="py-2 px-4 border border-gray-300">keterangan</th>
                 <th class="py-2 px-4 border border-gray-300">Aksi</th>
             </tr>
         </thead>
@@ -29,14 +27,14 @@
             @foreach ($peminjamans as $index => $peminjaman)
                 <tr>
                     <td class="py-2 px-4 border border-gray-300">{{ $index + 1 }}</td>
-                    <td class="py-2 px-4 border border-gray-300">{{ $peminjaman->pegawai->nama }}</td>
-                    <td class="py-2 px-4 border border-gray-300">{{ $peminjaman->ruang->nama }}</td>
+                    <td class="py-2 px-4 border border-gray-300">{{ $peminjaman->ruang_id }}</td>
+                    <td class="py-2 px-4 border border-gray-300">{{ $peminjaman->pegawai_id }}</td>
                     <td class="py-2 px-4 border border-gray-300">{{ $peminjaman->tanggal }}</td>
-                    <td class="py-2 px-4 border border-gray-300">{{ $peminjaman->waktu_mulai }} -
-                        {{ $peminjaman->waktu_selesai }}</td>
-                    <td class="py-2 px-4 border border-gray-300">{{ $peminjaman->keperluan }}</td>
+                    <td class="py-2 px-4 border border-gray-300">{{ $peminjaman->jam_mulai }}</td>
+                    <td class="py-2 px-4 border border-gray-300">{{ $peminjaman->jam_akhir }}</td>
+                    <td class="py-2 px-4 border border-gray-300">{{ $peminjaman->keterangan }}</td>
                     <td class="py-2 px-4 border border-gray-300">
-                        <flux:button :href="route('peminjaman.edit', $peminjaman)" variant="primary">Edit</flux:button>
+                        <flux:button :href="route('peminjaman.edit', $peminjaman)">Edit</flux:button>
                         <flux:button variant="danger" wire:click="delete({{ $peminjaman->id }})"
                             wire:confirm="Are you sure?">Delete</flux:button>
                     </td>

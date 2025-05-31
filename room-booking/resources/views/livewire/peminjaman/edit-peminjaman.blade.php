@@ -1,26 +1,30 @@
 <div class="container mx-auto">
-    <h1 class="text-2xl font-bold mb-4">Edit Peminjaman {{ $peminjaman->kode }}</h1>
-
+    <h1 class="text-2xl font-bold mb-4">Edit Peminjaman</h1>
     <form wire:submit.prevent="save" class="space-y-4">
-        <flux:input type="text" id="kode" wire:model.defer="kode" label="Kode Peminjaman" placeholder="Masukkan Kode"
-            required />
+        <flux:input type="text" id="ruang_id" wire:model.defer="ruang_id" label="Kode Ruang"
+            placeholder="Masukkan Kode Ruang" required />
 
-        <flux:input type="text" id="nama_peminjam" wire:model.defer="nama_peminjam" label="Nama Peminjam"
-            placeholder="Masukkan Nama Peminjam" required />
+        <flux:input type="text" id="pegawai_id" wire:model.defer="pegawai_id" label="Nama Pegawai"
+            placeholder="Masukkan Nama Pegawai" required />
 
-        <flux:input type="date" id="tanggal_pinjam" wire:model.defer="tanggal_pinjam" label="Tanggal Pinjam"
-            required />
+        <flux:input type="date" id="tanggal" wire:model.defer="tanggal" label="Pilih Tanggal" required />
 
-        <flux:input type="date" id="tanggal_kembali" wire:model.defer="tanggal_kembali" label="Tanggal Kembali"
-            required />
+        <flux:input type="time" id="jam_mulai" wire:model.defer="jam_mulai" label="Pilih Jam Mulai" required />
 
-        <flux:select id="status" wire:model.defer="status" label="Status Peminjaman" placeholder="Pilih Status"
-            required>
-            <flux:select.option value="Dipinjam">Dipinjam</flux:select.option>
-            <flux:select.option value="Kembali">Kembali</flux:select.option>
-            <flux:select.option value="Dibooking">Dibooking</flux:select.option>
-            <flux:select.option value="Dibatalkan">Dibatalkan</flux:select.option>
+        <flux:input type="time" id="jam_akhir" wire:model.defer="jam_akhir" label="Pilih Jam Akhir" required />
+
+        <flux:select id="keterangan" wire:model.defer="keterangan" label="Keterangan"
+            placeholder="Pilih Status Keterangan" required>
+            <flux:select.option value="Diskusi Proyek">Diskusi Proyek</flux:select.option>
+            <flux:select.option value="Koordinasi Tim">Koordinasi Tim</flux:select.option>
+            <flux:select.option value="Pelatihan Karyawan">Pelatihan Karyawan</flux:select.option>
+            <flux:select.option value="Presentasi Produk">Presentasi Produk</flux:select.option>
+            <flux:select.option value="Rapat Anggaran">Rapat Anggaran</flux:select.option>
+            <flux:select.option value="Rapat Evaluasi">Rapat Evaluasi</flux:select.option>
+            <flux:select.option value="Rapat Strategi">Rapat Strategi</flux:select.option>
+            <flux:select.option value="Rapat Tim">Rapat Tim</flux:select.option>
         </flux:select>
+
 
         <flux:button type="submit" variant="primary">
             Save
